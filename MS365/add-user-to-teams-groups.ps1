@@ -7,20 +7,12 @@
 .NOTES
     File Name      : add-user-as-owner-to-all-teams.ps1
     Author         : Ben Vegh
-    Prerequisite   : PowerShell 5.1 or higher, Microso# Let user select a user
-Write-Log -Message "Prompting to select a user..." -Level Info
-$selectedUser = Show-SelectionMenu -Items $activeUsers -Title "Select a user to add to Teams groups" -DisplayProperty "DisplayName"
-
-if (-not $selectedUser) {
-    Write-Log -Message "No user was selected. Exiting script." -Level Warning
-    Disconnect-MgGraph
-    exit 0
-}PowerShell SDK
+    Prerequisite   : PowerShell 5.1 or higher, Microsoft Graph PowerShell SDK
 .EXAMPLE
     .\add-user-as-owner-to-all-teams.ps1
 #>
 
-#Requires -Version 5.1
+# Requires -Version 5.1
 
 # Function to write logs
 function Write-Log {
